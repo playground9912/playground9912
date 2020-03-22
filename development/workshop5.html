@@ -1,0 +1,72 @@
+<html>
+
+moin leute<br/>
+
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+
+<script>
+
+var canvas;
+var canvasContext;
+var ballX = 50;
+var ballY = 10;
+var ballSpeedX = 5;
+
+window.onload = function() {
+    console.log("Ich bin cool.");
+    canvas = document.getElementById("gameCanvas");
+    canvasContext = canvas.getContext("2d");
+
+    var framesPerSecond = 30;
+    setInterval(function () {
+        moveEverything();
+        drawEverything () ;
+    } , 1000/framesPerSecond);
+
+}
+
+
+function moveEverything() {
+    ballX = ballX + ballSpeedX;
+    if (ballX < 0) {
+        ballSpeedX = -ballSpeedX;
+    }
+    if (ballX > canvas.width) {
+        ballSpeedX = -ballSpeedX;
+    }
+} 
+
+function drawEverything() {
+       
+    // nächste Zeile: schwarzer Hintergrund
+    colorRect(0,0,canvas.width,canvas.height,"black");
+
+    // nächste Zeile: weißes linkes Paddel
+    colorRect(0,210,10,100,"white");
+
+    // nächste Zeile: roter Ball
+    colorRect(0,210,10,100,"white");
+
+// nächste Zeile: roter Ball
+colorCircle (ballX,100,10,"red");
+
+
+}
+
+function colorRect(leftX,topY,width,height,drawColor)  {
+canvasContext.fillStyle = drawColor;
+canvasContext.fillRect(leftX,topY,width,height); 
+}
+
+function colorCircle (centerX,centerY,radius,drawColor) {
+canvasContext.fillStyle = drawColor;
+canvasContext.beginPath();
+canvasContext.arc(centerX,centerY,radius,0,Math.PI*2,true);
+canvasContext.fill();
+
+}
+
+</script>
+
+
+</html>

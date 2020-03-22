@@ -1,0 +1,32 @@
+<html>
+
+moin leute<br/>
+
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+
+<script>
+
+var canvas;
+var canvasContext;
+
+window.onload = function() {
+    console.log("Ich bin cool.");
+    canvas = document.getElementById("gameCanvas");
+    canvasContext = canvas.getContext("2d");
+
+    canvasContext.fillStyle = "black";
+    canvasContext.fillRect(0,0,canvas.width,canvas.height);
+
+    canvasContext.fillStyle = "green";
+    canvasContext.fillRect(50,50,50,50);
+
+
+}
+
+
+
+</script>
+
+
+
+</html>

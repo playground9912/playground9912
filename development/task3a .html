@@ -1,0 +1,62 @@
+<html>
+
+Mein Monster<br/>
+
+<canvas id="gameCanvas" width="1200" height="1000"></canvas>
+
+<script>
+
+var canvas;
+var canvasContext;
+var zungeX = 50;
+
+window.onload = function() {
+    console.log("Ich bin cool.");
+    
+    canvas = document.getElementById("gameCanvas");
+    canvasContext = canvas.getContext("2d");
+    setInterval(drawEverything, 1);
+
+    //drawEverything();
+
+}
+
+function drawEverything() {
+    zungeX = zungeX +5;
+
+    console.log(zungeX);
+
+    canvasContext.fillStyle = "black";
+    canvasContext.fillRect(120,0,200,180);
+
+    canvasContext.fillStyle = "blue";
+    canvasContext.fillRect(180,20,30,30);
+
+    canvasContext.fillStyle = "blue";
+    canvasContext.fillRect(260,20,30,30);
+
+    canvasContext.fillStyle = "orange";
+    canvasContext.fillRect(190,80,110,20);
+
+    canvasContext.fillStyle = "red";
+    canvasContext.fillRect(150,110,150,20);
+
+    canvasContext.fillStyle = "red";
+    canvasContext.fillRect(150,90,20,20);
+
+    canvasContext.fillStyle = "black";
+    canvasContext.fillRect(180,180,90,80);
+
+    canvasContext.fillStyle = "green";
+    canvasContext.fillRect(80,260,300,300);
+
+    // Zunge ausfahren Objekt
+    canvasContext.fillStyle = "red";
+    canvasContext.fillRect(200,120,30,zungeX);
+}
+
+
+
+</script>
+
+</html>

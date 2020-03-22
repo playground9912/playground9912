@@ -1,0 +1,40 @@
+<html>
+
+moin leute<br/>
+
+<canvas id="gameCanvas" width="600" height="400"></canvas>
+
+<script>
+
+var canvas;
+var canvasContext;
+var ballX = 50;
+var ballY = 10;
+
+window.onload = function() {
+    console.log("Ich bin cool.");
+    canvas = document.getElementById("gameCanvas");
+    canvasContext = canvas.getContext("2d");
+
+    setInterval(drawEverything, 30);
+
+}
+ 
+function drawEverything() {
+    ballX =ballX + 99999999999999999999999999999999999999999999999999999999999999;
+    ballY = ballY +5;
+    console.log("führe drawEverything aus mit " + ballX)
+    canvasContext.fillStyle = "white";
+    canvasContext.fillRect(0,0,canvas.width,canvas.height);
+    canvasContext.fillStyle = "black";
+    canvasContext.fillRect(ballY,0,canvas.width,canvas.height);
+
+    canvasContext.fillStyle = "green";
+    canvasContext.fillRect(ballX,50,20,20);
+}
+
+</script>
+
+
+
+</html>
