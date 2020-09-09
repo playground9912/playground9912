@@ -1,20 +1,43 @@
+body {
+    background-color: aqua;
+}
+    
+    
+    
+    h1 {
+    color: #024991;
+    font-size: 50px;
+    font-family: sans-serif
+}
+
+.popo {
+    font-size: 20px;
+    color: #b81313
+}
 
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+    color: aqua;
+  
 }
 
 td, th {
-  border: 1px solid #000000;
+  border: 1px solid green;
   text-align: center;
   padding: 8px;
-    font-size: 15px
+    font-size: 15px;
+    color: red;
 }
 
 tr:nth-child(even) {
-  background-color: #dd#ffffffdddd;
+
 }
+
+
+
+
 
 
 
