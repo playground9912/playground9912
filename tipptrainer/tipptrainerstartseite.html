@@ -1,0 +1,136 @@
+<DOCTYPE html>
+
+    <head>
+        <link href="tipp.css" type="text/css" rel="stylesheet" />
+        <script>
+            var lektion_text = "";
+            var textPosition = 0;
+
+            var lektion1_text = "f j f j f j fff jjj fff jjj fff jjj fjf fjf jfj jfj jfj fjf fjf jfj fjf ffj ffj ffj jjf jjf ff jj ff jj fjf jjj fff f j jf fff jjj fjf jfj jffj fffjj fjf fjf fjj";
+            var lektion2_text = "ru fj ru fj ru fj ru fj";
+            var lektion3_text = "ich bins";
+            var lektion4_text = "erstmal das";
+            var lektion5_text = "zweitesmal das";
+            var lektion6_text = "nun das dritte mal";
+
+
+            window.onload = function() {
+                document.addEventListener("keypress", eventKeyPressed);
+            };
+
+            function updateText(text, pos, richtigGeklickt) {
+                var neuerText = "";
+                neuerText += "<p class='hoha'>";
+                neuerText += "<b class='richtig'>"
+                neuerText += text.substr(0, pos);
+                neuerText += "</b>"
+
+                if (richtigGeklickt) {
+                    neuerText += "<b class='richtig'>"
+                    neuerText += text.substr(pos, 1);
+                    neuerText += "</b>"
+                } else {
+                    neuerText += "<b class='falsch'>"
+                    neuerText += text.substr(pos, 1);
+                    neuerText += "</b>"
+                }
+
+                neuerText += text.substr(pos + 1);
+                neuerText += "</p>";
+
+                //console.log(neuerText);
+
+                document.getElementById('lektionsText').innerHTML = neuerText;
+            }
+            
+            function lektionAbgeschlossen(){
+                console.log("yeah! fertig!! coolio!!!");
+                document.getElementById('geschafftText').innerHTML = "Luckwunsch!!!!";
+                document.getElementById('lektionsText').innerHTML = "";
+                
+            }
+
+            function eventKeyPressed(event) {
+
+                //console.log(event);
+                //console.log("Buchstabe: " + event.key);
+                //console.log("Lektionstext = " + lektion_text);         
+
+                var richtigerBuchstabe = lektion_text.charAt(textPosition);
+
+                //console.log(lektion_text);
+                //console.log("erwartet: " + richtigerBuchstabe + " - gedrückt: " + event.key);
+                //console.log("gedrückt: " + event.key);
+
+                if (event.key == richtigerBuchstabe) {
+                    //console.log("richtg :-)");
+                    updateText(lektion_text, textPosition, true);
+                    textPosition = textPosition + 1;
+                    
+                    if (lektion_text.length == textPosition){
+                        lektionAbgeschlossen();
+                    }
+                    
+                } else {
+                    //console.log("falsch :-(");
+                    updateText(lektion_text, textPosition, false);
+                }
+            }
+
+            function wahlLektion(lektionsNummer) {
+                textPosition = 0;
+                if (lektionsNummer == 1) {
+                    lektion_text = lektion1_text;
+                } else if (lektionsNummer == 2) {
+                    lektion_text = lektion2_text;
+                } else if (lektionsNummer == 3) {
+                    lektion_text = lektion3_text;
+                } else if (lektionsNummer == 4) {
+                    lektion_text = lektion4_text;
+                } else if (lektionsNummer == 5) {
+                    lektion_text = lektion5_text;
+                } else if (lektionsNummer == 6) {
+                    lektion_text = lektion6_text;
+                } else if (lektionsNummer == 7) {
+                    lektion_text = lektion7_text;
+                } else if (lektionsNummer == 8) {
+                    lektion_text = lektion8_text;
+                } else if (lektionsNummer == 9) {
+                    lektion_text = lektion9_text;
+                }
+
+                lektion_text = lektion_text;
+                document.getElementById('lektionsText').innerHTML = "<p class='hoha'>" + lektion_text + "</p>";
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+
+        <table>
+            <tr>
+                <td>
+                    <h1 class="hoho">Lektionen</h1>
+                    <p class="a" onClick=wahlLektion(1)>Lektion 1</p>
+                    <p class="b" onClick=wahlLektion(2)>Lektion 2</p>
+                    <p class="c" onClick=wahlLektion(3)>Lektion 3</p>
+                    <p class="d" onClick=wahlLektion(4)>Lektion 4</p>
+                    <p class="e" onClick=wahlLektion(5)>Lektion 5</p>
+                    <p class="f" onClick=wahlLektion(6)>Lektion 6</p>
+                    <p class="g" onClick=wahlLektion(7)>Lektion 7</p>
+                    <p class="h" onClick=wahlLektion(8)>Lektion 8</p>
+                    <p class="i" onClick=wahlLektion(9)>Lektion 9</p>
+                </td>
+                <td>
+                    <p id="geschafftText"></p>
+                    <p id="lektionsText"></p>
+                    <p class="huhu">Hier können sie 10 Finger-Tippen lernen.</p>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+
+</DOCTYPE>
