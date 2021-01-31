@@ -12,6 +12,7 @@
             var lektion4_text = "erstmal das";
             var lektion5_text = "zweitesmal das";
             var lektion6_text = "nun das dritte mal";
+            var lektion10_text = ""
 
 
             window.onload = function() {
@@ -38,8 +39,6 @@
                 neuerText += text.substr(pos + 1);
                 neuerText += "</p>";
 
-                //console.log(neuerText);
-
                 document.getElementById('lektionsText').innerHTML = neuerText;
             }
             
@@ -51,28 +50,18 @@
             }
 
             function eventKeyPressed(event) {
-
                 //console.log(event);
-                //console.log("Buchstabe: " + event.key);
-                //console.log("Lektionstext = " + lektion_text);         
 
                 var richtigerBuchstabe = lektion_text.charAt(textPosition);
 
-                //console.log(lektion_text);
                 //console.log("erwartet: " + richtigerBuchstabe + " - gedrückt: " + event.key);
-                //console.log("gedrückt: " + event.key);
-
                 if (event.key == richtigerBuchstabe) {
-                    //console.log("richtg :-)");
                     updateText(lektion_text, textPosition, true);
-                    textPosition = textPosition + 1;
-                    
+                    textPosition = textPosition + 1;                    
                     if (lektion_text.length == textPosition){
                         lektionAbgeschlossen();
-                    }
-                    
+                    }                    
                 } else {
-                    //console.log("falsch :-(");
                     updateText(lektion_text, textPosition, false);
                 }
             }
@@ -98,6 +87,9 @@
                 } else if (lektionsNummer == 9) {
                     lektion_text = lektion9_text;
                 }
+                } else if (lektionsNummer == 10) {
+                    lektion_text = lektion10_text;
+                }
 
                 lektion_text = lektion_text;
                 document.getElementById('lektionsText').innerHTML = "<p class='hoha'>" + lektion_text + "</p>";
@@ -122,6 +114,7 @@
                     <p class="g" onClick=wahlLektion(7)>Lektion 7</p>
                     <p class="h" onClick=wahlLektion(8)>Lektion 8</p>
                     <p class="i" onClick=wahlLektion(9)>Lektion 9</p>
+                    <p onClick=Wahllektion(10)>Rumpelstielzien</p>
                 </td>
                 <td>
                     <p id="geschafftText"></p>
