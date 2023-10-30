@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meine Startseite</title>
+
+    <style>
+      
+      body {
+        margin: 0%;
+        font-family: "Roboto", sans-serif;
+      }
+      .header-image {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+        filter: brightness(1);
+      }
+      .container {
+        position: absolute;
+        right: 32px;
+        left: 32px;
+        top: 16px;
+        font-size: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .menu-link {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        font-size: 60px;
+      }
+      .menu-link:hover {
+        text-decoration: underline;
+      }
+      .headline {
+        position: absolute;
+        left: 50px;
+        top: 300px;
+        color: white;
+        font-size: 80px;
+        width: 500px;
+        text-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5);
+      }
+      .ueberthemen {
+        position: absolute;
+        left: 1400px;
+        top: 300px;
+        font-size: 50px;
+        color: yellow;
+      }
+
+   
+      .Zwischenüberschriften {
+        color: black;
+        font-size: 60px;
+        margin-left: 25px;
+      }
+    
+      .unterthemen {
+        margin-left: 50px;
+        font-size: 30px;
+      }
+      li {
+        font-size: 30px;
+        margin-left: 20px;
+        text-decoration: none;
+      }
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+    </style>
+  </head>
+  <body>
+    <img class="header-image" src="./bilder/background_startseite.jpg" />
+    <div class="container">
+      <img src="./bilder/logo.png" />
+      <div class="navigation">
+        <a class="menu-link" href="">Kontakt</a>
+        <a class="menu-link" href="">Über mich</a>
+        <a class="menu-link" href="">Keine Ahnung</a>
+      </div>
+    </div>
+
+    <div class="ueberthemen">
+      <h3>A-Frame</h3>
+      <h3>JavaScript</h3>
+      <h3>Html / CSS</h3>
+    </div>
+
+    <h1 class="headline">Die Anfänge eines Programmierers</h1>
+
+    <!--Hier startet der Teil unterm Bild-->
+    
+    <h2 class="Zwischenüberschriften"><b>A-Frame und 3D</b></h2>
+    <ul class="links_Aframe">
+        <li><a href="./Aframe/aframe.html">Blender- Objekte in Aframe (lokaler Server muss gestartet werden)</a></li>
+        <li><a href="./anderes_1/dreid.html">Eine kleine 3D Stadt</a></li>
+        <li><a href="./dreide.html">Noch etwas dreideiges was nur über den Server laufen kann</a></li>
+    </ul>
+
+    <!--Teil JavaScript-->
+
+    <h2 class="Zwischenüberschriften">JavaScript</h2>
+        <ul>
+            <li class="paragraph">
+
+              <!--Self HTML-->
+
+              <p>Meine Selfhtml Projekte funktionierend mit der Konsole</p>
+              <ul>
+                <li><a href="./00SELFHTML/2.html">Altersprüfer</a></li>
+                <li><a href="./00SELFHTML/3.html">Eine Zahl die mit Eins Subtrahiert wird</a></li>
+                <li><a href="./00SELFHTML/4.html">Die Quadratzahlen bis Hundert</a></li>
+                <li><a href="./00SELFHTML/5.html">Die Wurzel einer Zahl ziehen</a></li>
+                <li><a href="./00SELFHTML/6.html">Wurzel ziehem, Runden, Quadrieren einer Zahl</a></li>
+                <li><a href="./00SELFHTML/asdfasdfasdf.html">Prüfen, ob jemand erwachsen ist</a></li>
+              </ul>
+            </li>
+            <li>
+
+              <!--Rechnerprogramme-->
+
+              <p class="paragraph">Rechnerprogramme</p>
+              <ul>
+                <li><a href="./anderes/anderes1/Addition.html">Hinzuaddieren von zahlen 1-9</a></li>
+                <li><a href="./anderes_1/ohJunge.html">Ein funktionierender Taschenrechner</a></li>
+                <li><a href="./anderes_1/webwebweb.html">Ein Programm für das kleine 1 * 1</a></li>
+                <li><a href="./taschenrechner/version2.html">Noch ein Taschenrechner mit Wurzezelzieh Funktion</a></li>
+              </ul>
+            </li>
+
+            <li>
+
+              <!--Canvas-->
+
+              <p class="paragraph">Etwas was ich mit Canvas gemalt habe</p>
+              <ul>
+                <li><a href="./development/task2.html">Ein halbfertiges Labyrinth</a></li>
+                <li><a href="./development/task2b.html">Ein kleines Monster, welches ich gemacht habe</a></li>
+                <li><a href="./development/task3a .html">Dem Monster wächst eine Lange zunge</a></li>
+              </ul>
+
+            </li>
+
+            <!--Sonstiges-->
+            <li>
+              <p class="paragraph">Sonstige Projekte</p>
+
+              <ul>
+                <li><a href="./anderes/anderes1/auspr2.html">Eine Tabelle mit der man Malen kann</a></li>
+                <li><a href="./development/workshop7.html">Ein Ping Pong Spiel</a></li>
+                <li><a href="./tipptrainer/tipptrainerstartseite.html">Ein Tipptrainer den ich erstellt habe</a></li>
+              </ul>
+            </li>
+        </ul>
+
+
+  </body>
+</html>

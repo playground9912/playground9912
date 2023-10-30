@@ -2,16 +2,25 @@
 
 
 .huhu {
-    font-size: 40px;
+    font-size: 70px;
 }
 
 .hoho {
     text-align: top;
+    font-size: 60px;
 }
 
 table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
+    border: 1px solid black;
+    border-collapse: collapse; 
+}
+
+table {
+    width: 100%;
+}
+
+p {
+    font-size: 40px;
 }
 
 .hoha {
@@ -22,6 +31,8 @@ table, th, td {
     color: green;
     background-color: black;
 }
+
+
 
 .falsch {
     background-color: red;

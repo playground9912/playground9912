@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<script>
+    const one = "vierzig mal zehn"
+    console.log("Warum geht das nd?")
+
+    function spinWords(){
+        var test = one
+        const myArray = test.split(" ");
+
+        
+        const newArray = myArray.map((value) =>{
+     
+            return value.length < 5 ? value : value.split("").reverse().join("");
+        });
+
+        return newArray.join(" ");
+    }
+
+</script>
+
+</head>
+
+
+<body>
+
+    <button type="button" onclick=spinWords() >Start</button>
+
+</body>
+
+</html>

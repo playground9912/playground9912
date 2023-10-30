@@ -1,0 +1,169 @@
+<html>
+
+<head>
+    <style>
+
+        body {
+            background-color: burlywood;
+        }
+
+    </style>
+    <script>
+
+'use strict'
+
+function ergebnis_berechnenaa() {
+            console.log(document.getElementById('dividend').value);
+            console.log(document.getElementById('divisor').value);
+
+
+            var dividend = parseFloat(document.getElementById('dividend').value);
+            var divisor = parseFloat(document.getElementById('divisor').value);
+            var quotient = dividend / divisor;
+            console.log(quotient);
+
+            document.getElementById('quotient').innerHTML = quotient;
+        }
+
+        function ergebnis_berechnenab() {
+            console.log(document.getElementById('multiplikator1').value);
+            console.log(document.getElementById('multiplikator2').value);
+
+
+            var multiplikator1 = parseFloat(document.getElementById('multiplikator1').value);
+            var multiplikator2 = parseFloat(document.getElementById('multiplikator2').value);
+            var produkt = multiplikator1 * multiplikator2;
+            console.log(produkt);
+
+            document.getElementById('produkt').innerHTML = produkt;
+        }
+
+        function ergebnis_berechnenac() {
+            console.log(document.getElementById('minuend').value);
+            console.log(document.getElementById('subtrahend').value);
+
+
+            var minuend = parseFloat(document.getElementById('minuend').value);
+            var subtrahend = parseFloat(document.getElementById('subtrahend').value);
+            var differenz = minuend - subtrahend;
+            console.log(differenz);
+
+            document.getElementById('differenz').innerHTML = differenz;
+        }
+
+
+        function ergebnis_berechnenad() {
+            console.log(document.getElementById('summand1').value);
+            console.log(document.getElementById('summand2').value);
+
+
+            var summand1 = parseFloat(document.getElementById('summand1').value);
+            var summand2 = parseFloat(document.getElementById('summand2').value);
+            var summe = summand1 + summand2;
+            console.log(summe);
+
+            document.getElementById('summe').innerHTML = summe;
+            /*
+            console.log("yeah! fertig!! coolio!!!");
+            document.getElementById('geschafftText').innerHTML = "Luckwunsch!!!!";
+            document.getElementById('lektionsText').innerHTML = "";
+            */
+           }
+
+
+        function wurzelZiehen(zahl) {
+            return Math.sqrt(parseFloat(Zahl));
+        }
+        const wurzel = wurzelZiehen(eingabe);
+
+    </script>
+</head>
+
+<body>
+
+    <table>
+        <tr>
+            <td>
+                <input type="number" id="summand1" name="summand1" />
+            </td>
+            <td>+</td>
+            <td><input type="number" id="summand2" name="summand1" /></td>
+            <td>
+                <p>=</p>
+            </td>
+            <td>
+                Summe:
+            </td>
+            <td width="120px" id="summe">
+            </td>
+            <td><button type="button" onClick=ergebnis_berechnenad()>Ergebnis Berechnen</button></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="minuend" name="summand1" />
+            </td>
+            <td>-</td>
+            <td><input type="number" id="subtrahend" name="summand1" /></td>
+            <td>
+                <p>=</p>
+            </td>
+            <td>
+                Differenz:
+            </td>
+            <td width="120px" id="differenz">
+            </td>
+            <td><button type="button" onClick=ergebnis_berechnenac()>Ergebnis Berechnen</button></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="multiplikator1" name="summand1" />
+            </td>
+            <td>x</td>
+            <td><input type="number" id="multiplikator2" name="summand1" /></td>
+            <td>
+                <p>=</p>
+            </td>
+            <td>
+                Produkt:
+            </td>
+            <td width="120px" id="produkt">
+            </td>
+            <td><button type="button" onClick=ergebnis_berechnenab()>Ergebnis Berechnen</button></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="dividend" name="summand1" />
+            </td>
+            <td>:</td>
+            <td><input type="number" id="divisor" name="summand1" /></td>
+            <td>
+                <p>=</p>
+            </td>
+            <td>
+                Quotient:
+            </td>
+            <td width="120px" id="quotient">
+            </td>
+            <td><button type="button" onClick=ergebnis_berechnenaa()>Ergebnis Berechnen</button></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="number" id="eingabe" name="eingabe">
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>Lösung:</td>
+            <td id="worzel"></td>
+            <td>
+                <button type="button" onclick=wurzelziehen(eingabe)>Wurzel ziehen</button>
+            </td>
+            
+
+        </tr>
+    </table>
+
+    
+</body>
+
+</html>

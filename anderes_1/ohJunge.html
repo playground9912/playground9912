@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <script>
+
+        function ergebnis_berechnena() {
+            var Summand1 = parseFloat(document.getElementById('summand1').value);
+            var summand2 = parseFloat(document.getElementById('summand2').value);
+            var summe = Summand1 + summand2;
+
+            document.getElementById('summe').innerHTML = summe;
+
+        }
+
+        function ergebnis_berechnenb() {
+            var minuend = parseFloat(document.getElementById('minuend').value);
+            var subtrahend = parseFloat(document.getElementById('subtrahend').value);
+            var differenz = minuend - subtrahend;
+
+            document.getElementById('differenz').innerHTML = differenz;
+
+        }
+
+        function ergebnis_berechnenc() {
+            var faktor1 = parseFloat(document.getElementById('faktor1').value);
+            var faktor2 = parseFloat(document.getElementById('faktor2').value);
+            var produkt = faktor1 * faktor2;
+
+            document.getElementById('produkt').innerHTML = produkt;
+        }
+
+        function ergebnis_berechnend() {
+            var dividend = parseFloat(document.getElementById('dividend').value);
+            var divisor = parseFloat(document.getElementById('divisor').value);
+            var quotient = dividend / divisor;
+
+            document.getElementById('quotient').innerHTML = quotient;
+            }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>Hier ist der Taschenrechner</h1>
+
+    <table>
+        <tr>
+            <td><input type="number" id="summand1"></td>
+            <td>+</td>
+            <td><input type="number" id="summand2"></td>
+            <td>=</td>
+            <td width="120px" id="summe"></td>
+            <td><button type="button" onClick=ergebnis_berechnena()>Lösung ermitteln</button></td>
+        </tr>
+        <tr>
+            <td><input type="number" id="minuend"></td>
+            <td>-</td>
+            <td><input type="number" id="subtrahend"></td>
+            <td>=</td>
+            <td width="120px" id="differenz"></td>
+            <td><button type="button" onClick=ergebnis_berechnenb()>Lösung ermitteln</td>
+        </tr>
+        <tr>
+            <td><input type="number" id="faktor1"></td>
+            <td>x</td>
+            <td><input type="number" id="faktor2"></td>
+            <td>=</td>
+            <td width="120px" id="produkt"></td>
+            <td><button type="button" onclick=ergebnis_berechnenc()>Lösung ermitteln</td>
+        </tr>
+        <tr>
+            <td><input type="number" id="dividend"></td>
+            <td>:</td>
+            <td><input type="number" id="divisor"></td>
+            <td>=</td>
+            <td width="120px" id="quotient"></td>
+            <td><button type="button" onclick=ergebnis_berechnend>Lösung ermitteln</td>
+        </tr>
+    </table>
+
+</body>
+
+</html>

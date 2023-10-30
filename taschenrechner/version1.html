@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <script>
+
+
+        function ergebnis_berechnen() {
+            console.log(document.getElementById('summand1').value);
+            console.log(document.getElementById('summand2').value);
+
+
+            var summand1 = parseInt(document.getElementById('summand1').value);
+            var summand2 = parseInt(document.getElementById('summand2').value);
+            var summe = summand1 + summand2;
+            console.log(summe);
+
+            document.getElementById('summe').innerHTML = summe;
+            /*
+            console.log("yeah! fertig!! coolio!!!");
+            document.getElementById('geschafftText').innerHTML = "Luckwunsch!!!!";
+            document.getElementById('lektionsText').innerHTML = "";
+            */
+        }
+    </script>
+</head>
+
+<body>
+    <label for="summand1">Summand:
+        <input type="number" id="summand1" name="summand1" />
+    </label>
+    <p>+</p>
+    <label for="summand2">Summand:
+        <input type="number" id="summand2" name="summand2" />
+    </label>
+    <p>=</p>
+    <p>Summe:
+    <div id="summe"></div>
+    </p>
+    <button type="button" onClick=ergebnis_berechnen()>Ergebnis Berechnen</button>
+
+</body>
+
+</html>

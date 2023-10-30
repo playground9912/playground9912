@@ -1,0 +1,337 @@
+<! DOCTYPE html>
+    <html>
+
+    <head>
+
+        <script>
+        
+        </script>
+        
+    <style>
+        .abc {
+            font-size: 50px;
+            font-family: sans-serif;
+            font-weight: bolder;
+
+
+
+        }
+
+
+        table {
+            border-collapse: collapse;
+
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+
+        }
+
+        /* Tooltip container */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            border-bottom: 1px dotted black;
+            /* If you want dots under the hoverable text */
+        }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+
+            /* Position the tooltip text */
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+
+            /* Fade in tooltip */
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        /* Tooltip arrow */
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: #555 transparent transparent transparent;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        
+       th, td {
+
+  
+  border-color: black;
+        }
+        td:hover {background-color:#0028bc;}
+        th:hover {background-color:#0028bc;}
+        
+    </style>
+</head>
+
+<body>
+
+    <p class="abc">
+        Ich habe das Programmiert
+    </p>
+
+    <!-_woche a tabelle-->
+        <h3>Woche A</h3>
+
+        <table>
+            <tr>
+                <th>Block</th>
+                <th>Montag</th>
+                <th>Dienstag</th>
+                <th>Mittwoch</th>
+                <th>Donnerstag</th>
+                <th>Freitag</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <div class="tooltip">Kunst
+                        <span class="tooltiptext">Raum 505</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Mathe
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Sport
+                        <span class="tooltiptext">Raum 302/304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">NaWi
+                        <span class="tooltiptext">Raum 112</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Deutsch
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <div class="tooltip">Englisch 1
+                        <span class="tooltiptext">Raum 304</span>
+                    </div><br>
+                    <div class="tooltip">Spanisch
+                        <span class="tooltiptext">Raum 307</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">NaWi
+                        <span class="tooltiptext">Raum 112</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">GeWi
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Deutsch
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Mathe
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <div class="tooltip">Englisch 2
+                        <span class="tooltiptext">Raum 304</span>
+                    </div><br>
+                    <div class="tooltip">Spanisch 1
+                        <span class="tooltiptext">Raum 307</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Enrichment 3
+                        <span class="tooltiptext">Raum 514</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Musik
+                        <span class="tooltiptext">Raum 418</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Englisch
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">ITG
+                        <span class="tooltiptext">Gr.1 Raum 514
+                            Gr.2 Raum 515</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    <div class="tooltip">Enrichment 4
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="tooltip">GeWi
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <br /><br/>
+
+        <h3>Woche B</h3>
+
+        <table>
+            <tr>
+                <th>Block</th>
+                <th>Montag</th>
+                <th>Dienstag</th>
+                <th>Mittwoch</th>
+                <th>Donnerstag</th>
+                <th>Freitag</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <div class="tooltip">Erdkunde
+                        <span class="tooltiptext">Raum 214</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Geschichte
+                        <span class="tooltiptext">Raum 305</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Sport
+                        <span class="tooltiptext">Große Halle</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">ER7
+                        <span class="tooltiptext">314</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Int
+                        <span class="tooltiptext">Raum 514</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <div class="tooltip">Sport
+                        <span class="tooltiptext">Raum 302/304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">NaWi
+                        <span class="tooltiptext">Raum 112</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">GeWi
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Deutsch
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Mathe
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <div class="tooltip">Spanisch
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Enrichment 3
+                        <span class="tooltiptext">Raum 514</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Musik
+                        <span class="tooltiptext">Raum 418</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">Englisch
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td>
+                    <div class="tooltip">ITG
+                        <span class="tooltiptext">Gr.1 Raum 514
+                            Gr.2 Raum 515</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    <div class="tooltip">Enrichment 4
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="tooltip">GeWi
+                        <span class="tooltiptext">Raum 304</span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+
+</body></html>

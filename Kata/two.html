@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <script>
+        var one = "aAbcDeD";
+
+
+    function duplicateCount(str) {
+        let buchstabenZähler = {};
+        let mehrfachBuchstaben = []; 
+        var test = one.toLocaleLowerCase();
+        
+        for (let i = 0; i < test.length; i++) {
+            let buchstabe = test[i];
+            
+            if (buchstabenZähler[buchstabe]) {
+                buchstabenZähler[buchstabe]++;
+            } 
+            else {
+                buchstabenZähler[buchstabe] = 1;
+            }
+        }
+
+        for (let buchstabe in buchstabenZähler) {
+            if (buchstabenZähler[buchstabe] > 1) {
+                mehrfachBuchstaben.push(buchstabe);
+            }
+        }
+
+        console.log(mehrfachBuchstaben.length)
+        return mehrfachBuchstaben
+
+    }
+
+    </script>
+
+</head>
+
+<body>
+
+
+    <button type="button" onClick=duplicateCount()>Start</button>
+</body>
+
+</html>

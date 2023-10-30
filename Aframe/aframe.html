@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script>
+
+function init() {
+
+        setInterval(rotate, 40);
+        setInterval(rotate_2, 15);
+
+    }
+
+    function rotate() {
+      var sceneEl = document.querySelector('a-scene');
+
+      var pull = sceneEl.querySelector('#pull');
+      var yRot = pull.getAttribute('rotation').y;
+
+      var mull = sceneEl.querySelector('#mull');
+      var yRot2 = mull.getAttribute('rotation').y;
+
+      pull.setAttribute('rotation', { x: 0, y: yRot + 1, z: 0 });
+      mull.setAttribute('rotation', { x: 0, y: yRot2 + 1, z: 0 });
+    }
+
+    function rotate_2() {
+      var sceneEl = document.querySelector('a-scene');
+
+      var kull = sceneEl.querySelector('#kull');
+      var yRot2 = kull.getAttribute('rotation').y;
+
+      kull.setAttribute('rotation', { x: 0, y: yRot2 - 1, z: 0 });
+    }
+
+
+    </script>
+  </head>
+  <body onload="init()">
+    <a-scene renderer="precision: mediump">
+        <a-assets>
+          <a-asset-item id="tre" src="texttasse.gltf"></a-asset-item>  
+          <a-asset-item id="tree" src="schneemann.gltf"></a-asset-item>
+          <a-asset-item id="teller" src="teller.gltf"></a-asset-item>
+        </a-assets>
+   
+        <a-entity id="pull" gltf-model="#tree" position="0 -1.5 -8" rotation="0 -90 0"></a-entity>
+        <a-entity id="kull" gltf-model="#tre" position="5 -1.5 -8" rotation="0 -90 0"></a-entity>
+        <a-entity id="mull" width="5" gltf-model="#teller" position="5 -1.5 -8" rotation="0 -90 0"></a-entity>
+        <a-sky color="#25DD49"></a-sky>
+      </a-scene>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+
+<title>4. Eingabe von Namen und Alter</title>
+</head>
+<body>
+<script>
+    'use strict';
+      let name  = '',
+          alter = '';
+      let ablehnungstext = 'Du kommst hier net rein!'
+      const erwachsen = 18;
+      name = prompt('Bitte geben Sie Ihren Namen ein!', name);
+      alter = prompt('Bitte geben Sie Ihr Alter ein!', alter);
+
+      if (isNaN(alter)) {
+        console.log(ablehnungstext);
+      }
+
+      else if (alter >= erwachsen) {
+          let ausgabe = 'Hallo ' + name+ '!';
+          console.log(ausgabe);
+      }
+
+      else {
+        console.log(ablehnungstext);
+      }
+
+    //part 2
+    //  let a = 23;
+    //  let b = 42;
+   
+      // bei der if wird mit einem istgleich ein neuer wert zugewiesen deswegen 2
+     // if (a == b){
+   //       alert('23 ist 42, q.e.d.');
+     // }
+     // else {
+       //   alert('23 ist gar nicht 42!')
+     // }
+
+</script>
+</body>
+</html>

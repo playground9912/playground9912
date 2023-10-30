@@ -1,0 +1,63 @@
+<!DOCTYPEHTML>
+<html>
+<head>
+    <style>
+        table {
+            border-collapse: collapse;
+
+        }
+        
+        .mystyle {
+            background-color: black;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+    <script>
+        var createMouseOverHandler = function(x, y) {
+            return function() {
+                console.log("hallo x = " + x + " und y = " + y)
+                // ermittle die ID, bekomme das element
+                // id = "meins_" + j + "_" + i
+                          var element = document.getElementById("meins_" + x + "_" + y);
+                          element.classList.add("mystyle");
+                // füge dem Element eine Klasse hinzu
+            };
+        }
+
+        function createTable(rows, columns) {
+            var square = document.getElementById('meineLocation');
+            var table = document.createElement('table');
+            for (var i = 0; i < rows; i++) {
+                var tr = document.createElement('tr');
+                for (var j = 0; j < columns; j++) {
+                    var td = document.createElement('td');
+                    td.setAttribute("id", "meins_" + j + "_" + i);
+                    //td.onmouseover = createMouseOverHandler(j,i);
+                    td.onclick = createMouseOverHandler(j, i);
+                    var td_text = document.createTextNode('');
+                    td.appendChild(td_text);
+                    tr.appendChild(td);
+                }
+                table.appendChild(tr);
+            }
+            square.appendChild(table);
+        }
+
+        window.onload = function() {
+            console.log('Dokument geladen');
+            createTable(3, 3);
+        }
+    </script> 
+</head>
+<body>
+
+    <h1>XO Spiel</h1>
+    <div id="meineLocation"></div>
+</body>
+</html>

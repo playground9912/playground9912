@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<script>
+
+    const password = 123258;
+
+    function passwortPrüfen() {
+        console.log(document.getElementById('passwort').value);
+
+        var passwoord = parseFloat(document.getElementById('passwort').value);
+
+        if(passwoord === password) {
+            alert()
+        }
+        else {
+            alert('Tja Falsches Passwort')
+        }
+    }
+
+</script>
+
+</head>
+
+<body>
+
+<h1>Herzlich willkommen auf meiner Webseite</h1>
+
+<h2>Ich muss sie ersteinmal Bitten das Password einzugeben und dann auf die richtige Seite weiterzuleiten.</h2>
+
+<input type="number" id="passwort" name="password">
+<button type="button" onclick=passwortPrüfen>Abgeben</button>
+
+</body>
+
+</html>

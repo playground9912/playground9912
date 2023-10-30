@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-template-rows: 1fr;
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 3;
+        }
+
+        .div2 {
+            grid-area: 1 / 3 / 2 / 7;
+        }
+
+        body {
+            font-size: 25px;
+            background-color: burlywood;
+        }
+
+        .p1 {
+            font-size: 20px;
+        }
+
+        table,
+        td,
+        th {
+            border: 2px solid black;
+            border-collapse: collapse;
+            text-align: center;
+            text-align: center;
+        }
+    </style>
+
+
+
+
+
+    <script>
+
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="parent">
+        <div class="div1">
+
+            <h2>Links zu meinen anderen Webseiten:</h2>
+
+            <ul>
+                <li><a href="../../raetsel/Raetsel1.html">Mein Rätsel</a>
+                    <p class="p1">Es ist nie Richtig fertig geworden und sehr alt...</p>
+                </li>
+                <li><a href="../../development/workshop7.html">Ein kleines Spiel</a>
+                    <p class="p1">Ein kleines Spiel mit der Hilfe von einem Workshop
+                        <br /> Muss nur noch ein bisschen überarbeitet werden...
+                    </p>
+                </li>
+                <li>
+                    <a href="../../Aframe/aframe.html">Meine Blender Projekte</a>
+                    <p class="p1">Hier zeige ich meine Figuren,<br /> die ich in Blender gebaut habe.</p>
+                </li>
+                <li>
+                    <a href="../../taschenrechner/version2.html">Taschenrechner</a>
+                    <p class="p1">Hier habe ich einen Taschenrechner Programmiert, <br />ist zwar nicht
+                        sehr übersichtlich,<br/> aber er efüllt seinen Zweck. </p>
+                </li>
+            </ul>
+
+        </div>
+
+
+
+        <div class="div2">
+
+            <h2>Meine Homepage</h2>
+
+            <p id="prob"></p>
+
+            <p>Dies ist Meine erste Homepage
+                <br />
+                Hier stelle ich meine ersten kleinen Projekte da, welche ich als Hobby und Spaß programmiert habe.
+
+            </p>
+            <h3>Ein Paar infos über mich:</h3>
+            <br />
+
+            <table>
+
+                <tr>
+                    <td width="20%">Mein Name:</td>
+                    <td width="20%">Paul</td>
+                </tr>
+                <tr>
+                    <td>Alter:</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>Schule:</td>
+                    <td>Dathe Gymnasium, 8. Klasse</td>
+                </tr>
+                <tr>
+                    <td>Lieblingsessen:</td>
+                    <td>
+                        <ol>
+                            <li>Chilli con carne</li>
+                            <li>Chepperd's Pye</li>
+                            <li>Pizza und Burger</li>
+                            <li>Nudeln mit Tomatensoße</li>
+                            <li>Dürum-Döner</li>
+                        </ol>
+                    </td>
+                </tr>
+
+            </table>
+
+            <h3>Meine Hobbys:</h3>
+
+            <ol>
+                <li>Spiele ich Badminton im Verein.</li>
+                <li>Programmiere ich manchmal</li>
+                <li>Koche ich sehr gerne</li>
+                <li>Treffe ich mich mit meinen Freunden on- und offline.</li>
+            </ol>
+
+        </div>
+    </div>
+
+</body>
+
+<script>
+
+    var name = prompt('wie heißt du?', name);
+    var text = name + ' Herzlich Willkommen auf meiner Webseite';
+
+    document.getElementById('prob').innerHTML = text;
+
+</script>
+
+
+</html>

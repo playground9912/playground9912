@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+
+        body {
+            font-size: 25px;
+        }
+
+    </style>
+
+    <script>
+
+        'use strict'
+
+        function wurzelZiehen(zahl) {
+            return Math.sqrt(parseFloat(zahl));
+        }
+
+        function runden(zahl) {
+            return ergebnis.toFixed(1);
+        }
+
+        function quadrieren(zahl) {
+            return eingabe * eingabe;
+        }
+
+
+        const eingabe = prompt('Bitte geben sie eine Zahl ein!');
+        const ergebnis = wurzelZiehen(eingabe);
+        const gerunded = runden(ergebnis)
+        const quadrat = quadrieren(eingabe);
+
+        const text = `Die Wurzel von ${eingabe} ist ${ergebnis}, gerundet: ${gerunded}. Das Quadrat der Zahl ist ${quadrat}`;
+        console.log(text);
+
+        
+
+    </script>
+
+</head>
+
+<body>
+
+    <p id="p1"></p>
+
+    <script>
+        document.getElementById('p1').innerHTML = text;
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <style>
+
+        .a {
+            font-size: 60px;
+        }
+        
+
+    </style>
+
+    <script>
+
+        'use strict';
+        let name = '',
+            alter = '',
+            eingabe = '',
+            text = '';
+
+        
+
+        const erwachsen = 18;
+
+        name = prompt('Bitte geben Sie Ihren Namen ein!', name);
+        alter = prompt('Bitte geben Sie Ihr Alter ein!', alter);
+
+
+
+        if (isNaN(alter)) {
+            eingabe = 'dumm';
+        }
+        else if (alter < erwachsen) {
+            eingabe = 'jung';
+        } else {
+            eingabe = 'ok';
+        }
+
+        switch (eingabe) {
+            case 'jung':
+                text = 'Du bist leider zu jung!';
+                break;
+            case 'dumm':
+                text = 'Sie sind leider zu dumm, eine Zahl einzugeben!';
+                break;
+            case 'ok':
+                text = `Hallo ${name}!`;
+                break;
+        }
+
+        console.log(text);
+
+        window.onload = function () {
+            document.getElementById('hehehou').innerHTML = (begruessung);
+        };
+
+        window.onload = function () {
+            let begruessung = 'Hallo ' + name + 'schön, dass ein' + alter + '-jähriger da ist.';
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+
+
+    <p class="a" id="hehehou"></p>
+
+    <button type="button" onclick=wiedergabe>asdfasdf</button>
+
+</body>
+
+
+
+</html>

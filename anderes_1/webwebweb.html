@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+
+    <style>
+        td {
+            text-align: center;
+        }
+
+        .e{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+
+
+
+
+
+</head>
+
+<body>
+
+    <script>
+
+
+
+        function ergebnis_berechnena() {
+            var summand1 = parseFloat(document.getElementById('summand1').value);
+            var summand2 = parseFloat(document.getElementById('summand2').value);
+            var summe = summand1 + summand2;
+
+            document.getElementById('summe').innerHTML = summe;
+        }
+
+
+        window.onload = function () {
+            document.addEventListener("keypress", eventKeyPressed);
+        };
+
+
+
+
+
+        let zahl;
+
+
+        let text;
+
+
+        function eventKeyPressed(event) {
+            console.log(event);
+
+            if (event.key === 'a') {
+
+                for (var i = 1; i <= 10; i++) {
+                    zahl = i * i;
+                    text = zahl + ' = ' + i + ' * ' + i;
+                    let p = document.createElement("p");
+                    p.append(text);
+
+                    //var newElement = document.createTextNode(text);
+                    document.getElementById('Quadratzahlen').append(p);
+                    //document.getElementById('Quadratzahlen').innerHTML = text;
+                }
+            }
+
+            else {
+                var spalte = parseInt(event.key);
+                for (var i = 1; i <= 10; i++) {
+                    var zahl = i * spalte;
+                    var text = zahl + ' = ' + i + ' * ' + spalte;
+                    let p = document.createElement("p");
+                    p.append(text);
+                    document.getElementById('id_' + spalte).append(p);
+                }
+            }
+        }
+
+
+    </script>
+
+
+    <h1>Auf dieser Webseite Musst du nur Tasten Drücken</h1>
+
+    <table class="e">
+        <tr class="e">
+            <th style="width: 8%" class="e">Quadratzahlen</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 1</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 2</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 3</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 4</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 5</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 6</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 7</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 8</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 9</td>
+            <th style="width: 8%" class="e">Probier es auch mal mit 0</td>
+        </tr>
+        <tr class="e">
+            <td width="9%" class="e">
+                <div id="Quadratzahlen"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_1"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_2"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_3"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_4"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_5"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_6"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_7"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_8"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_9"></div>
+            </td>
+            <td width="9%" class="e">
+                <div id="id_0"></div>
+            </td>
+        </tr>
+        
+    </table>
+
+    	<a href="ohJunge.html">Taschenrechner</a>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

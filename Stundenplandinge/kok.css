@@ -1,0 +1,40 @@
+
+    
+    
+    
+    h1 {
+
+    font-size: 50px;
+    font-family: sans-serif
+}
+
+.popo {
+    font-size: 20px;
+    color: #000000;
+}
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+  
+}
+
+td, th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 8px;
+    font-size: 15px;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+

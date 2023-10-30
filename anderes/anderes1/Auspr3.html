@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        var symbol1 = "X";
+        
+        function meineZellenFunktion(id) {
+            document.getElementById(id).innerHTML = symbol1;
+            
+        }
+        
+        function aktualiseieren() {
+           if(symbol1=="X") {
+            symbol1 = "O"
+        }  
+        }
+          
+       
+            
+       
+    </script>
+
+    <style>
+        td,
+        th {
+            border: 1px solid black;
+            height: 30px;
+            width: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>Tic Tac Toe</h1>
+    <table>
+        <tr>
+            <td id="Zelle_1_1" onClick="meineZellenFunktion('Zelle_1_1')"></td>
+            <td id="Zelle_1_2" onClick="meineZellenFunktion('Zelle_1_2')"></td>
+            <td id="Zelle_1_3" onClick="meineZellenFunktion('Zelle_1_3')"></td>
+        </tr>
+        <tr>
+            <td id="Zelle_2_1" onClick="meineZellenFunktion('Zelle_2_1')"></td>
+            <td id="Zelle_2_2" onClick="meineZellenFunktion('Zelle_2_2')"></td>
+            <td id="Zelle_2_3" onClick="meineZellenFunktion('Zelle_2_3')"></td>
+        </tr>
+        <tr>
+            <td id="Zelle_3_1" onClick="meineZellenFunktion('Zelle_3_1')"></td>
+            <td id="Zelle_3_2" onClick="meineZellenFunktion('Zelle_3_2')"></td>
+            <td id="Zelle_3_3" onClick="meineZellenFunktion('Zelle_3_3')"></td>
+        </tr>
+    </table>
+    
+    
+    
+</body></html>
