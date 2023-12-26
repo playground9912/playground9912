@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+
+    <style>
+        body {
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="480" height="720"></canvas>
+
+<script>
+    // Um das Canvas im Skript zu überschreiben
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    const columns = canvas.width / 30;
+    const rows = canvas.height / 30;
+
+    const typeL = {
+        bottom_left: null,
+        parts: [
+            [{x: -1, y: 0}, {x: -1, y: -1}, {x: 0, y: 0}, {x: -1, y: -2}],
+            [{x: -1, y: 0}, {x: -1, y: -1}, {x: 0, y: -1}, {x: 1, y: -1}],
+            [{x: -1, y: -2}, {x: 0, y: -2}, {x: 0, y: -1}, {x: 0, y: 0}],
+            [{x: -1, y: 0}, {x: 0, y: 0}, {x: +1, y: 0}, {x: 1, y: -1}],
+        ]
+    }
+
+    const movingPiece = {
+        type: typeL,
+        position: {x: 6, y: 3},
+        rotation: 0,
+        color: 'red'
+    }
+
+    // Das playField
+    const playField = {
+        grid: []
+    };
+
+    for (let i = 0; i < rows; i++) {
+        playField.grid[i] = [];
+        for (let j = 0; j < columns; j++) {
+            playField.grid[i][j] = {
+                color: null
+            }
+        }
+    }
+
+
+    playField.grid[4][2] = {
+        color: 'green'
+    }
+
+
+    function checkForRow() {
+        for (let i = 0; i < rows; i++) {
+
+        }
+    }
+
+
+    draw();
+
+    function draw() {
+        ctx.fillStyle = "black";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        drawGrid();
+
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < columns; j++) {
+                if (playField.grid[i][j].color) {
+                    ctx.fillStyle = playField.grid[i][j].color;
+                    ctx.fillRect(j * 30 + 1, i * 30 + 1, 29, 29);
+                }
+            }
+        }
+
+        // moving piece
+        ctx.fillStyle = 'red';
+        movingPiece.type.parts[movingPiece.rotation].forEach((parts) => {
+            ctx.fillRect((movingPiece.position.x + parts.x) * 30 + 1, (movingPiece.position.y + parts.y) * 30 + 1, 29, 29);
+        })
+
+    }
+
+    const keysPressed = [];
+
+    document.addEventListener("keydown", (e) => {
+        if (keysPressed.indexOf(e.code) === -1) {
+            if (e.code === "ArrowUp") {
+                movingPiece.rotation = (movingPiece.rotation + 1) % 4;
+            }
+            if (e.code === "ArrowDown" && isValid(0, 1)) {
+                movingPiece.position.y += 1;
+            }
+            if (e.code === "ArrowLeft" && isValid(-1, 0)) {
+                movingPiece.position.x -= 1;
+            }
+            if (e.code === "ArrowRight" && isValid(1, 0)) {
+                console.log(columns)
+                movingPiece.position.x += 1;
+            }
+            keysPressed.push(e.code);
+            draw();
+        }
+    });
+
+    document.addEventListener("keyup", (e) => {
+        const index = keysPressed.indexOf(e.code);
+        if (index > -1) { // only splice array when item is found
+            keysPressed.splice(index, 1); // 2nd parameter means remove one item only
+        }
+    });
+
+    function drawGrid() {
+        ctx.fillStyle = "white";
+        //Spalten
+        for (let i = 0; i < columns; i++) {
+            ctx.fillRect(i * 30, 0, 1, canvas.height);
+        }
+        //Zeilen
+        for (let i = 0; i < rows; i++) {
+            ctx.fillRect(0, i * 30, canvas.width, 1);
+        }
+    }
+
+    console.log(playField.grid[movingPiece.position.y - 1][movingPiece.position.x]);
+
+
+    function isValid(deltaX, deltaY) {
+        return !movingPiece.type.parts[movingPiece.rotation].some((parts) => {
+            console.log(deltaX, deltaY, movingPiece.position.x + parts.x + deltaX + deltaY, movingPiece.position.y + parts.y + deltaY)
+            return(movingPiece.position.y + parts.y + deltaY >= 0 && movingPiece.position.y + parts.y + deltaY < rows  && playField.grid[movingPiece.position.y + parts.y + deltaY][movingPiece.position.x + parts.x + deltaX]?.color != null) ||
+            movingPiece.position.x + parts.x + deltaX < 0 || movingPiece.position.x + parts.x + deltaX > columns - 1 || movingPiece.position.y + parts.y + deltaY >= rows
+        })
+    }
+
+
+    setInterval(gameLoop, 500);
+
+    function gameLoop() {
+        if (isValid(0, 1)) {
+            movingPiece.position.y += 1;
+        } else {
+            console.log('test')
+            movingPiece.type.parts[movingPiece.rotation].forEach((parts) => {
+                playField.grid[movingPiece.position.y + parts.y][movingPiece.position.x + parts.x].color = movingPiece.color;
+            })
+            movingPiece.type = typeL;
+            movingPiece.position.x = 10;
+            movingPiece.position.y = 0;
+        }
+
+
+        draw();
+    }
+
+</script>
+</body>
+</html>
