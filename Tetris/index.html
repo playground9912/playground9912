@@ -23,7 +23,7 @@
     const rows = canvas.height / 30;
 
     const typeL = {
-        bottom_left: null,
+        // Position ist unten links
         parts: [
             [{x: -1, y: 0}, {x: -1, y: -1}, {x: 0, y: 0}, {x: -1, y: -2}],
             [{x: -1, y: 0}, {x: -1, y: -1}, {x: 0, y: -1}, {x: 1, y: -1}],
@@ -32,8 +32,68 @@
         ]
     }
 
+    const typeJ = {
+        // Position ist unten rechts
+        parts: [
+            [{x: -1, y: 0}, {x: 0, y: 0}, {x: 0, y: -1}, {x: 0, y: -2}],
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: -1, y: -1}, {x: -2, y: -1}],
+            [{x: -1, y: 0}, {x: -1, y: -1}, {x: -1, y: -2}, {x: 0, y: -2}],
+            [{x: 0, y: 0}, {x: -1, y: 0}, {x: -2, y: 0}, {x: -2, y: -1}]
+        ]
+    }
+
+    const typeO = {
+        //Normal alles Gleich, der Würfel unten Links
+        parts: [
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: 1, y: 0}, {x: 1, y: -1}],
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: 1, y: 0}, {x: 1, y: -1}],
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: 1, y: 0}, {x: 1, y: -1}],
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: 1, y: 0}, {x: 1, y: -1}]
+        ]
+    }
+
+    const typeI = {
+        //Der lange position ist unten links
+        parts: [
+            [{x: 0, y: 0}, {x: 1, y: 0}, {x: 2, y: 0}, {x: 3, y: 0}],
+            [{x: 1, y: 0}, {x: 1, y: -1}, {x: 1, y: -2}, {x: 1, y: -3}],
+            [{x: 0, y: 0}, {x: 1, y: 0}, {x: 2, y: 0}, {x: 3, y: 0}],
+            [{x: 1, y: 0}, {x: 1, y: -1}, {x: 1, y: -2}, {x: 1, y: -3}]
+        ]
+    }
+
+    const typeT = {
+        //Der Penis position von unten links aus
+        parts: [
+            [{x: 1, y: 0}, {x: 0, y: -1}, {x: 1, y: -1}, {x: 2, y: -1}],
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: 0, y: -2}, {x: 1, y: -1}],
+            [{x: 0, y: 0}, {x: 1, y: 0}, {x: 2, y: 0}, {x: 1, y: -1}],
+            [{x: 1, y: -1}, {x: 2, y: 0}, {x: 2, y: -1}, {x: 2, y: -2}]
+        ]
+    }
+
+    const typeS = {
+        // Position unten links das komische Zweierteil
+        parts:[
+            [{x:0 , y: 0}, {x: 1, y: 0}, {x: 1, y: 1}, {x: 2, y: 1}],
+            [{x:0 , y: -1}, {x: 0, y: -2}, {x: 1, y: 0}, {x: 1, y: -1}],
+            [{x:0 , y: 0}, {x: 1, y: 0}, {x: 1, y: -1}, {x: 2, y: -1}],
+            [{x:0 , y: -1}, {x: 0, y: -2}, {x: 1, y: 0}, {x: 1, y: -1}]
+        ]
+    }
+
+    const typeZ = {
+        //Wieder unten links gespiegelter typ S
+        parts:[
+            [{x: 1, y: 0}, {x: 2, y: 0}, {x: 0, y: -1}, {x: 1, y: -1}],
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: 1, y: -1}, {x: 1, y: -2}],
+            [{x: 0, y: -1}, {x: 1, y: -1}, {x: 1, y: 0}, {x: 2, y: 0}],
+            [{x: 0, y: 0}, {x: 0, y: -1}, {x: 1, y: -1}, {x: 1, y: -2}]
+        ]
+    }
+
     const movingPiece = {
-        type: typeL,
+        type: typeZ,
         position: {x: 6, y: 3},
         rotation: 0,
         color: 'red'
@@ -57,14 +117,6 @@
     playField.grid[4][2] = {
         color: 'green'
     }
-
-
-    function checkForRow() {
-        for (let i = 0; i < rows; i++) {
-
-        }
-    }
-
 
     draw();
 
@@ -107,6 +159,11 @@
                 console.log(columns)
                 movingPiece.position.x += 1;
             }
+            if (e.code === "Space"){
+                while (isValid(0,1)) {
+                    movingPiece.position.y += 1;
+                }
+            }
             keysPressed.push(e.code);
             draw();
         }
@@ -131,14 +188,31 @@
         }
     }
 
+    function checkForRow(){
+        for (let i = 0; i < rows; i++) {
+            if (playField.grid[i].every(checkForColor)){
+                for (let j = 0; j < playField.grid[i].length; j++){
+                    console.log("Hallo")
+                    playField.grid[i][j] = {
+                        color: null
+                    };
+                }
+            }
+        }
+    }
+
+    function checkForColor(color) {
+        return color === null;
+    }
+
     console.log(playField.grid[movingPiece.position.y - 1][movingPiece.position.x]);
 
 
     function isValid(deltaX, deltaY) {
         return !movingPiece.type.parts[movingPiece.rotation].some((parts) => {
-            console.log(deltaX, deltaY, movingPiece.position.x + parts.x + deltaX + deltaY, movingPiece.position.y + parts.y + deltaY)
-            return(movingPiece.position.y + parts.y + deltaY >= 0 && movingPiece.position.y + parts.y + deltaY < rows  && playField.grid[movingPiece.position.y + parts.y + deltaY][movingPiece.position.x + parts.x + deltaX]?.color != null) ||
-            movingPiece.position.x + parts.x + deltaX < 0 || movingPiece.position.x + parts.x + deltaX > columns - 1 || movingPiece.position.y + parts.y + deltaY >= rows
+            // console.log(deltaX, deltaY, movingPiece.position.x + parts.x + deltaX + deltaY, movingPiece.position.y + parts.y + deltaY)
+            return (movingPiece.position.y + parts.y + deltaY >= 0 && movingPiece.position.y + parts.y + deltaY < rows && playField.grid[movingPiece.position.y + parts.y + deltaY][movingPiece.position.x + parts.x + deltaX]?.color != null) ||
+                movingPiece.position.x + parts.x + deltaX < 0 || movingPiece.position.x + parts.x + deltaX > columns - 1 || movingPiece.position.y + parts.y + deltaY >= rows
         })
     }
 
@@ -146,6 +220,9 @@
     setInterval(gameLoop, 500);
 
     function gameLoop() {
+
+        checkForRow();
+
         if (isValid(0, 1)) {
             movingPiece.position.y += 1;
         } else {
@@ -157,8 +234,6 @@
             movingPiece.position.x = 10;
             movingPiece.position.y = 0;
         }
-
-
         draw();
     }
 
